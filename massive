@@ -1,0 +1,22 @@
+void main() {
+  List<int> numbers = [5, 7, 8, 6, 7, 6];
+  int sum = 0;
+
+  for (int num in numbers) {
+    if (num < 2) continue;
+
+    int del = 0;
+    for (int i = 2; i <= num ~/ 2; i++) {
+      if (num % i == 0) {
+        del = 1;
+        break;
+      }
+    }
+
+    if (del == 0) {
+      sum += num;
+    }
+  }
+
+  print("Сумма простых чисел: $sum");
+}
